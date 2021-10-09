@@ -1,8 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import useAuth from '../../hooks/useAuth';
 import './Login.css';
 
 const Login = () => {
+    const {signInWithGoogle} = useAuth();
     return (
         <div  className="form-login">
             <fieldset className="form-control">
@@ -19,7 +21,7 @@ const Login = () => {
                 <br />
                 <span>----------------OR------------------</span>
                 <p>sign in using</p>
-                <button onClick="">Google</button>
+                <button onClick={signInWithGoogle}>Google</button>
                 <button onClick="">GitHub</button>
             </fieldset>
         </div>

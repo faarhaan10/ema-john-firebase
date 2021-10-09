@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './App.css';
+import AuthProvider from './components/AuthProvider/AuthProvider';
 import Header from './components/Header/Header';
 import Inventory from './components/Inventory/Inventory';
 import Login from './components/Login/Login';
@@ -12,6 +13,7 @@ import Shop from './components/Shop/Shop';
 function App() {
   return (
     <div>
+      <AuthProvider>
       <Router>
         <Header></Header>
         <Switch>
@@ -41,6 +43,7 @@ function App() {
           </Route>
         </Switch>
       </Router>
+      </AuthProvider>
 
     </div>
   );
