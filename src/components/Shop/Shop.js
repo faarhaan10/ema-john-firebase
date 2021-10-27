@@ -16,7 +16,9 @@ const Shop = () => {
   const [displayProducts, setDisplayProducts] = useState([]);
   const size = 10;
   useEffect(() => {
-    fetch(`http://localhost:5000/products?page=${currentPage}&&size=${size}`)
+    fetch(
+      `https://mighty-atoll-48222.herokuapp.com/products?page=${currentPage}&&size=${size}`
+    )
       .then((res) => res.json())
       .then((data) => {
         setProducts(data.result);
